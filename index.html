@@ -19,12 +19,20 @@
             color: tomato;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
 
 </head>
 <body>
-    <img width="100%" src="countries.jpg" alt="">
-    
-    <div class = "container bg-light border shadow p-5">
+
+    <!-- MAIN CONTAINER-->
+    <div class = "container bg-light mt-5 border shadow p-5">
         <h2><i class="fas fa-globe-europe"></i>COUNTRY APP</h2>
         <p> This is an application which displays country information.</p>
         <hr>
@@ -33,6 +41,39 @@
          <hr>
          <p> Created with <i class="fas fa-heart"></i> by the CB8 Java Part Class</p>
     </div>
+
+    <!-- COUNTRY INFO-->
+    <div class="container border shadow mt-4">
+            <div class="row">
+    
+                <div class="col-9 p-0">
+                    <div id="map" class="map"></div>
+                </div>
+    
+                <div class="col p-3 bg-dark text-white">
+                <p>Name: Greece</p>
+                <p>Capital: Athens</p>
+                <p>Population: 10,858,018</p>
+                <img src="" alt="">
+                </div>
+    
+            </div>
+        </div>
+        <script>
+            var map = new ol.Map({
+                target: 'map',
+                layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+                ],
+                view: new ol.View({
+                center: ol.proj.fromLonLat([ 37, 24 ]),
+                zoom: 6
+                })
+            });
+        </script>
+      
 
 </body>
 </html>
