@@ -11,14 +11,7 @@
     <!-- FornAwesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-    <style>
-        #country {
-            width:300px;
-            }
-        .fa-heart {
-            color: tomato;
-        }
-    </style>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
     <style>
       .map {
@@ -27,7 +20,7 @@
       }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
-
+    <link rel="stylesheet" href="country.css">
 </head>
 <body>
 
@@ -59,21 +52,8 @@
     
             </div>
         </div>
-        <script>
-            var map = new ol.Map({
-                target: 'map',
-                layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                })
-                ],
-                view: new ol.View({
-                center: ol.proj.fromLonLat([ 37, 24 ]),
-                zoom: 6
-                })
-            });
-        </script>
-      
+        
+      <script src="country.js"></script>
 
 </body>
 </html>
